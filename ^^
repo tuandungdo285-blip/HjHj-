@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gửi quý cô Quỳnh 🌷</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff8f3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #5c3b43;
+}
+
+/* ================= MỞ THIỆP ================= */
+
+.open-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #f8c8d8, #fff1f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: 1s;
+}
+
+.open-box {
+    text-align: center;
+    animation: floating 3s ease-in-out infinite;
+}
+
+.open-box .flower {
+    font-size: 65px;
+}
+
+.open-box h1 {
+    font-size: 34px;
+    color: #914f60;
+}
+
+.open-box p {
+    line-height: 1.7;
+}
+
+.open-btn {
+    margin-top: 20px;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #a85c6d;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(120,60,80,.25);
+    transition: .3s;
+}
+
+.open-btn:hover {
+    transform: scale(1.08);
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ================= THIỆP ================= */
+
+.card {
+    width: min(92%, 650px);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 45px;
+    background: rgba(255,255,255,.92);
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(100,50,60,.2);
+    text-align: center;
+    animation: cardIn 1.2s ease;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card h1 {
+    color: #985363;
+    font-size: 32px;
+}
+
+.divider {
+    width: 80px;
+    height: 2px;
+    background: #c98593;
+    margin: 20px auto;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.job {
+    margin: 25px 0;
+    padding: 20px;
+    background: #fff3f6;
+    border-radius: 18px;
+    text-align: left;
+}
+
+.job p {
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #9b5061;
+    font-weight: bold;
+}
+
+.final-line {
+    font-size: 21px;
+    font-weight: bold;
+    color: #884b58;
+    margin: 28px 0;
+}
+
+/* ================= NÚT ================= */
+
+.buttons {
+    position: relative;
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 25px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    transition:
+        transform .5s ease,
+        font-size .5s ease,
+        padding .5s ease,
+        opacity .5s ease;
+}
+
+.think {
+    background: #eeeeee;
+    color: #777;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.yes {
+    background: #a95a6b;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(160,70,90,.3);
+    z-index: 3;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ================= MÀN HÌNH ĐỒNG Ý ================= */
+
+.success {
+    display: none;
+    animation: successIn 1s ease;
+}
+
+.success h2 {
+    font-size: 34px;
+    color: #985363;
+}
+
+.success p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+@keyframes successIn {
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= HOA RƠI ================= */
+
+.flower-fall {
+    position: fixed;
+    top: -40px;
+    pointer-events: none;
+    z-index: 200;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-40px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ================= TIM ================= */
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 300;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px) {
+
+    .card {
+        padding: 28px 20px;
+    }
+
+    .card h1 {
+        font-size: 26px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+
+    .job {
+        font-size: 14px;
+    }
+
+    .final-line {
+        font-size: 18px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 12px 16px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= MÀN HÌNH MỞ ================= -->
+
+<div class="open-screen" id="openScreen">
+
+    <div class="open-box">
+
+        <div class="flower">🌷</div>
+
+        <h1>Kính gửi quý cô Quỳnh</h1>
+
+        <p>
+            Dũng có một lời mời<br>
+            hơi nghiêm túc nhưng cũng không nghiêm túc lắm...
+        </p>
+
+        <button class="open-btn" onclick="openCard()">
+            Mở thư 💌
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= NHẠC ================= -->
+
+<audio id="music" loop>
+    <source src="nhac.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- ================= THIỆP ================= -->
+
+<div class="card">
+
+    <div id="mainContent">
+
+        <div style="font-size:48px;">
+            🌷
+        </div>
+
+        <h1>
+            Kính gửi quý cô Quỳnh
+        </h1>
+
+        <div class="divider"></div>
+
+
+        <div class="message">
+
+            <p>
+                Dũng xin phép gửi đến quý cô<br>
+                một lời mời đặc biệt.
+            </p>
+
+            <p>
+                <b>
+                    Chủ nhật này, quý cô có nhã hứng
+                    cùng Dũng dạo một vòng Sài Gòn không?
+                </b>
+            </p>
+
+        </div>
+
+
+        <div class="job">
+
+            <p>
+                🚗
+                <span class="highlight">
+                    Tài xế riêng
+                </span>
+                — không thu phí
+            </p>
+
+            <p>
+                🗺️
+                <span class="highlight">
+                    Tour guide
+                </span>
+                — tay nghề đang trong quá trình hoàn thiện
+            </p>
+
+            <p>
+                📸
+                <span class="highlight">
+                    Photographer
+                </span>
+                — tùy thuộc vào trình độ người chụp
+            </p>
+
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                Mặc dù mang danh dân Sài Gòn,
+                Dũng xin thú nhận rằng mình cũng
+                không rành Sài Gòn cho lắm :)))
+            </p>
+
+            <p>
+                Nhưng Dũng sẽ nghiên cứu trước,
+                để hôm đó ít nhất...
+                <b>không để quý cô bị lạc.</b>
+            </p>
+
+        </div>
+
+
+        <div class="final-line">
+
+            Quý cô chỉ cần đồng ý,<br>
+            còn đi đâu để Dũng tính. :>
+
+        </div>
+
+
+        <!-- ================= NÚT ================= -->
+
+        <div class="buttons" id="buttonArea">
+
+            <button
+                class="btn think"
+                id="thinkBtn">
+                Quý cô suy nghĩ thêm
+            </button>
+
+            <button
+                class="btn yes"
+                id="yesBtn"
+                onclick="sayYes()">
+                Đồng ý 💗
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ĐÃ ĐỒNG Ý ================= -->
+
+    <div class="success" id="success">
+
+        <div style="font-size:70px;">
+            💐
+        </div>
+
+        <h2>
+            Vậy là chốt kèo nhé! ❤️
+        </h2>
+
+        <p>
+            Dũng xin chính thức nhận nhiệm vụ:
+        </p>
+
+        <p>
+            🚗 Tài xế<br>
+            🗺️ Tour guide<br>
+            📸 Photographer<br>
+            ☕ Người lên lịch trình
+        </p>
+
+        <p>
+            Còn địa điểm cụ thể...
+        </p>
+
+        <p>
+            <b>
+                Dũng lo.<br>
+                Quý cô chỉ cần xuất hiện. :>
+            </b>
+        </p>
+
+        <div style="font-size:40px;">
+            🌷 🚗 🗺️ 📸 🌷
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==================================================
+   MỞ THIỆP
+================================================== */
+
+function openCard() {
+
+    const screen =
+        document.getElementById("openScreen");
+
+    const music =
+        document.getElementById("music");
+
+    screen.style.opacity = "0";
+
+    setTimeout(function() {
+
+        screen.style.display = "none";
+
+    }, 1000);
+
+
+    /* Bắt đầu nhạc */
+
+    music.volume = 0.35;
+
+    music.play().catch(function() {});
+
+
+    /* Hoa rơi */
+
+    startFlowers();
+
+}
+
+
+/* ==================================================
+   HOA RƠI
+================================================== */
+
+function startFlowers() {
+
+    setInterval(function() {
+
+        const flower =
+            document.createElement("div");
+
+        flower.className = "flower-fall";
+
+        const flowers = [
+            "🌷",
+            "🌸",
+            "🌺",
+            "🌼",
+            "💮"
+        ];
+
+        flower.innerText =
+            flowers[
+                Math.floor(
+                    Math.random() * flowers.length
+                )
+            ];
+
+        flower.style.left =
+            Math.random() * 100 + "vw";
+
+        flower.style.fontSize =
+            (15 + Math.random() * 15) + "px";
+
+        flower.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+        document.body.appendChild(flower);
+
+
+        setTimeout(function() {
+
+            flower.remove();
+
+        }, 10000);
+
+    }, 700);
+
+}
+
+
+/* ==================================================
+   NÚT SUY NGHĨ THÊM
+================================================== */
+
+let thinkCount = 0;
+
+const thinkBtn =
+    document.getElementById("thinkBtn");
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
+const buttonArea =
+    document.getElementById("buttonArea");
+
+
+/*
+    Máy tính:
+    Khi chuột tới gần nút,
+    nút sẽ né đi.
+*/
+
+thinkBtn.addEventListener(
+    "mouseenter",
+    runAway
+);
+
+
+function runAway() {
+
+    thinkCount++;
+
+
+    /* -------------------------------
+       ĐỒNG Ý TO DẦN
+    -------------------------------- */
+
+    const yesSize =
+        Math.min(
+            36,
+            16 + thinkCount * 3
+        );
+
+    yesBtn.style.fontSize =
+        yesSize + "px";
+
+
+    yesBtn.style.padding =
+        (14 + thinkCount * 2) +
+        "px " +
+        (25 + thinkCount * 4) +
+        "px";
+
+
+    /* -------------------------------
+       SUY NGHĨ NHỎ DẦN
+    -------------------------------- */
+
+    const thinkSize =
+        Math.max(
+            9,
+            16 - thinkCount * 1.3
+        );
+
+    thinkBtn.style.fontSize =
+        thinkSize + "px";
+
+
+    /* -------------------------------
+       BẮT ĐẦU NÉ
+    -------------------------------- */
+
+    if (thinkCount >= 1) {
+
+        const x =
+            (Math.random() - 0.5) * 260;
+
+        const y =
+            (Math.random() - 0.5) * 100;
+
+        thinkBtn.style.transform =
+            "translate(" +
+            x +
+            "px, " +
+            y +
+            "px)";
+
+    }
+
+
+    /* -------------------------------
+       ĐỔI CHỮ
+    -------------------------------- */
+
+    if (thinkCount === 2) {
+
+        thinkBtn.innerText =
+            "Khoan...";
+
+    }
+
+
+    if (thinkCount === 3) {
+
+        thinkBtn.innerText =
+            "Quý cô suy nghĩ thêm...";
+
+    }
+
+
+    if (thinkCount === 4) {
+
+        thinkBtn.innerText =
+            "Ủa 😭";
+
+    }
+
+
+    if (thinkCount === 5) {
+
+        thinkBtn.innerText =
+            "Sao cứ né vậy 🥹";
+
+    }
+
+
+    if (thinkCount >= 6) {
+
+        thinkBtn.innerText =
+            "Thôi mà... ❤️";
+
+        thinkBtn.style.opacity =
+            "0.45";
+
+    }
+
+}
+
+
+/* ==================================================
+   CLICK SUY NGHĨ
+================================================== */
+
+thinkBtn.addEventListener(
+    "click",
+    function() {
+
+        /*
+           Nếu vẫn somehow bấm được,
+           nó vẫn nhỏ đi và chạy tiếp.
+        */
+
+        runAway();
+
+    }
+);
+
+
+/* ==================================================
+   ĐỒNG Ý
+================================================== */
+
+function sayYes() {
+
+    const main =
+        document.getElementById("mainContent");
+
+    const success =
+        document.getElementById("success");
+
+
+    main.style.display = "none";
+
+    success.style.display = "block";
+
+
+    /* Bùng nổ trái tim */
+
+    createHeartExplosion();
+
+}
+
+
+/* ==================================================
+   TRÁI TIM BAY
+================================================== */
+
+function createHeartExplosion() {
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "heart";
+
+        heart.innerText =
+            ["❤️","💕","💗","💖","💘"][
+                Math.floor(
+                    Math.random() * 5
+                )
+            ];
+
+
+        heart.style.left =
+            "50%";
+
+        heart.style.top =
+            "50%";
+
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) +
+            "px";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        const x =
+            (Math.random() - 0.5) *
+            600;
+
+        const y =
+            (Math.random() - 0.5) *
+            600;
+
+
+        heart.animate(
+
+            [
+                {
+                    transform:
+                        "translate(-50%, -50%) scale(0)",
+                    opacity: 1
+                },
+
+                {
+                    transform:
+                        "translate(" +
+                        x +
+                        "px, " +
+                        y +
+                        "px) scale(1.5)",
+                    opacity: 0
+                }
+            ],
+
+            {
+                duration: 1600,
+                easing: "ease-out"
+            }
+
+        );
+
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 1600);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
